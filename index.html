@@ -11,7 +11,14 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #111827; /* Discord tarzı koyu ve asil arka plan */
+            /* Gradient karartma ve resmi ekrana tam sığdıran profesyonel arka plan kodu */
+            background: linear-gradient(rgba(17, 24, 39, 0.45), rgba(17, 24, 39, 0.75)), 
+                        url('arkaplan.png') no-repeat center center fixed;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-color: #111827; /* Resim yüklenirken arkada duracak renk */
             color: #ffffff;
             margin: 0;
             padding: 0;
@@ -28,37 +35,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 15px 20px;
+            background: rgba(17, 24, 39, 0.35);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 0 0 12px 12px;
         }
         
-        /* Logo ve Yazının Yan Yana Durduğu Kutu */
+        /* Sadece Logonun Durduğu Kutu (Yazılar Silindi ve Logo Büyütüldü) */
         .brand-container {
             display: flex;
             align-items: center;
-            gap: 12px; /* Logo ile yazı arasındaki boşluk */
         }
         .brand-logo {
-            width: 45px;  /* Logonun ideal boyutu */
-            height: 45px;
+            width: 80px;  /* Logo bayağı büyütüldü kanka */
+            height: auto;
             object-fit: contain;
-        }
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .brand-title {
-            font-size: 20px;
-            font-weight: 800;
-            color: #38bdf8;
-            letter-spacing: 0.5px;
-            line-height: 1.2;
-        }
-        .brand-subtitle {
-            font-size: 11px;
-            color: #94a3b8;
-            font-weight: 600;
-            letter-spacing: 0.5px;
         }
 
         /* Ana Hero Alanı */
@@ -75,9 +67,10 @@
         }
         .hero p {
             font-size: 20px;
-            color: #e2e8f0;
+            color: #ffffff;
             margin: 0 0 35px 0;
-            font-weight: 400;
+            font-weight: 500;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
         }
 
         /* Büyük İndirme Butonu Grubu */
@@ -105,8 +98,8 @@
             transform: translateY(-2px);
         }
         .btn-more {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             color: white;
             width: 55px;
             height: 55px;
@@ -117,9 +110,10 @@
             font-size: 22px;
             text-decoration: none;
             transition: background 0.2s;
+            backdrop-filter: blur(4px);
         }
         .btn-more:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.25);
         }
 
         /* İnce İstatistik Sayaçları */
@@ -132,12 +126,14 @@
             margin-bottom: 60px;
         }
         .stat-item {
-            background: rgba(0, 0, 0, 0.35);
+            background: rgba(17, 24, 39, 0.6);
             border-top: 3px solid #38bdf8;
             border-radius: 8px;
             padding: 20px;
             text-align: left;
-            backdrop-filter: blur(2px);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         .stat-item h2 {
             margin: 0;
@@ -148,7 +144,7 @@
         .stat-item p {
             margin: 5px 0 0 0;
             font-size: 14px;
-            color: #cbd5e1;
+            color: #e2e8f0;
         }
 
         /* İçerik Düzeni Container */
@@ -164,16 +160,19 @@
             margin: 40px 0 20px 0;
             text-align: left;
             width: 100%;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         /* Sürüm Bilgileri / Açıklama Alanı */
         .legacy-info-row {
-            background: rgba(0, 0, 0, 0.25);
+            background: rgba(17, 24, 39, 0.6);
             border-left: 4px solid #38bdf8;
             padding: 20px;
             border-radius: 4px;
             margin-bottom: 30px;
             text-align: left;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
         }
         .legacy-info-row p {
             margin: 6px 0;
@@ -186,11 +185,13 @@
 
         /* SSS Akordeon Düzeni */
         .faq-item {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(17, 24, 39, 0.5);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 8px;
             border-radius: 6px;
             overflow: hidden;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
         }
         .faq-question {
             padding: 18px 20px;
@@ -218,17 +219,20 @@
 
         /* Destek ve İletişim Alanı */
         .support-section {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(17, 24, 39, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 12px;
             padding: 30px;
             text-align: center;
             margin-top: 20px;
             width: 100%;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         .support-section p {
             margin: 0 0 20px 0;
-            color: #cbd5e1;
+            color: #e2e8f0;
             font-size: 15px;
             line-height: 1.6;
         }
@@ -236,7 +240,7 @@
             font-size: 18px;
             font-weight: 700;
             color: #ffffff;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.4);
             padding: 6px 14px;
             border-radius: 6px;
             font-family: monospace;
@@ -248,8 +252,10 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(17, 24, 39, 0.5);
             border-radius: 8px;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
         }
         th, td {
             padding: 14px;
@@ -263,13 +269,15 @@
         /* Alt Bilgi / Footer Text */
         .legacy-footer-text {
             font-size: 12px;
-            color: #94a3b8;
+            color: #cbd5e1;
             line-height: 1.8;
             margin-top: 40px;
             padding: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
             width: 100%;
+            background: rgba(17, 24, 39, 0.4);
+            backdrop-filter: blur(4px);
         }
         .footer-links {
             margin-bottom: 15px;
@@ -290,12 +298,8 @@
     <div class="navbar">
         <div class="brand-container">
             <img src="logo.png" alt="Yunus Launcher Logo" class="brand-logo">
-            <div class="brand-text">
-                <span class="brand-title">YUNUS LAUNCHER</span>
-                <span class="brand-subtitle">ADVANCED MINECRAFT HUB</span>
-            </div>
         </div>
-        <div style="font-size: 14px; color: #cbd5e1;">v1.0.0 Stable</div>
+        <div style="font-size: 14px; color: #38bdf8; font-weight: bold;">v1.0.0 Stable</div>
     </div>
 
     <div class="hero">
@@ -328,7 +332,7 @@
         <div class="legacy-info-row">
             <p><strong>Sürüm:</strong> v1.0.0 (Güncel)</p>
             <p><strong>Sistem:</strong> Windows 10 / 11 (64-bit)</p>
-            <p><strong>Açıklama:</strong> Pürüzsüz arayüzü, yüksek FPS optimizasyonları ve dahili Fabric/Sodium mod desteğiyle baştan yaratılmış profesyonel Minecraft Launcher projesi.</p>
+            <p><strong>Açıklama:</strong> Pürüzsüz arayüzü, yüksek FPS optimizasyonları bitmek bilmeyen Fabric/Sodium mod desteğiyle baştan yaratılmış profesyonel Minecraft Launcher projesi.</p>
         </div>
 
         <div class="section-title">SSS</div>
@@ -374,7 +378,7 @@
 
         <div class="section-title">Destek ve İletişim</div>
         <div class="support-section">
-            <p>Eğer bir hata yaşıyorsanız, öneriniz varsa veya bir şey çalışmıyorsa Türkiye'de açık olan resmi Instagram hesabımız üzerinden DM göndererek bana her zaman ulaşabilirsiniz:</p>
+            <p>Eğer bir hata yaşıyorsanız, öneriniz varsa veya bir şey çalışmıyorsa resmi Instagram hesabımız üzerinden DM göndererek bana her zaman ulaşabilirsiniz:</p>
             
             <a href="https://instagram.com/YunusLauncher" target="_blank" style="display: inline-flex; flex-direction: column; align-items: center; background: rgba(225, 48, 108, 0.1); border: 1px solid rgba(225, 48, 108, 0.4); padding: 15px 45px; border-radius: 10px; text-decoration: none; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
                 <div style="color: #e1306c; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Instagram DM Gönder</div>
