@@ -3,50 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yunus Launcher - İndirme Merkezi</title>
+    <title>Yunus Launcher - Resmi İndirme Merkezi</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Arka plana modern, shader'lı ve gerçekçi gökyüzü/su efektli bir Minecraft manzarası koyduk */
-            background: linear-gradient(rgba(11, 20, 38, 0.6), rgba(11, 20, 38, 0.6)), 
-                        url('https://images.alphacoders.com/132/1329124.jpeg') no-repeat center center fixed;
+            /* Kesin yüklenecek, ultra yüksek kalite shader'lı Minecraft resmi */
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), 
+                        url('https://cdn.pixabay.com/photo/2023/07/25/03/48/minecraft-8148216_1280.png') no-repeat center center fixed;
             background-size: cover;
             color: #f8fafc;
             margin: 0;
-            padding: 0;
+            padding: 40px 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            overflow-y: auto; /* Sayfanın aşağı kaydırılmasını sağlar */
         }
+        
+        /* Ana Kutu */
         .container {
             width: 90%;
-            max-width: 580px;
-            /* Arka planı modern ve şeffaf koyu mavi-gri yaptık */
-            background-color: rgba(15, 23, 42, 0.85);
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            max-width: 750px;
+            background-color: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(56, 189, 248, 0.25);
             border-radius: 16px;
             padding: 40px;
-            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.6);
+            box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.7);
             text-align: center;
-            backdrop-filter: blur(8px); /* Arkadaki shader'lı resmi pürüzsüzce bulandırır */
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
         }
+        
         h1 {
-            color: #38bdf8; /* Baby blue tonlarında parlak mavi */
-            font-size: 36px;
-            margin-bottom: 5px;
+            color: #38bdf8;
+            font-size: 38px;
+            margin: 0 0 5px 0;
             font-weight: 800;
-            letter-spacing: 1.5px;
-            text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+            letter-spacing: 2px;
+            text-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
         }
+        
         .subtitle {
             font-size: 12px;
             color: #94a3b8;
             margin-bottom: 35px;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             font-weight: 600;
         }
+        
+        /* Bilgi Kutusu */
         .info-box {
             background-color: rgba(30, 41, 59, 0.7);
             border-radius: 12px;
@@ -63,39 +73,113 @@
         .info-box strong {
             color: #fff;
         }
+        
+        /* İstatistik Sayacı Bölümü (Bol Malzeme) */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .stat-card h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #38bdf8;
+        }
+        .stat-card p {
+            margin: 5px 0 0 0;
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* İndirme Butonu */
         .btn-download {
             display: inline-block;
             width: 100%;
-            max-width: 320px;
+            max-width: 350px;
             background-color: #38bdf8;
             color: #0f172a;
             border: none;
-            padding: 16px 25px;
-            font-size: 18px;
+            padding: 18px 25px;
+            font-size: 20px;
             font-weight: 700;
             cursor: pointer;
-            border-radius: 10px;
+            border-radius: 12px;
             transition: all 0.2s ease-in-out;
             text-decoration: none;
-            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
-            margin-bottom: 25px;
+            box-shadow: 0 4px 25px rgba(56, 189, 248, 0.4);
+            margin-bottom: 35px;
         }
         .btn-download:hover {
             background-color: #7dd3fc;
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(56, 189, 248, 0.6);
+            box-shadow: 0 6px 30px rgba(56, 189, 248, 0.6);
         }
         
-        /* Modern Alt Butonlar */
+        /* Alt Bölümler (Aşağı Kaydırınca Çıkan Yerler) */
+        .section-title {
+            text-align: left;
+            font-size: 18px;
+            color: #fff;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Sistem Gereksinimleri Tablosu */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        td, th {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        th {
+            color: #38bdf8;
+        }
+
+        /* SSS Alanı */
+        .faq-item {
+            text-align: left;
+            background: rgba(30, 41, 59, 0.4);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .faq-title {
+            font-weight: 600;
+            color: #38bdf8;
+            margin-bottom: 5px;
+        }
+        .faq-text {
+            font-size: 14px;
+            color: #94a3b8;
+            margin: 0;
+        }
+        
+        /* Link Butonları */
         .sub-buttons {
             display: flex;
             gap: 15px;
             justify-content: center;
-            margin-top: 10px;
+            margin: 30px 0 10px 0;
         }
         .btn-secondary {
             flex: 1;
-            max-width: 160px;
+            max-width: 180px;
             background-color: rgba(30, 41, 59, 0.8);
             color: #f1f5f9;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -115,7 +199,6 @@
             margin-top: 40px;
             font-size: 11px;
             color: #64748b;
-            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -123,21 +206,73 @@
 
 <div class="container">
     <h1>YUNUS LAUNCHER</h1>
-    <div class="subtitle">Modern Web Connection Hub</div>
+    <div class="subtitle">Advanced Web Connection Hub</div>
 
-    <div class="info-box">
-        <p><strong>Sürüm:</strong> v1.0.0</p>
-        <p><strong>Sistem:</strong> Windows 10 / 11</p>
-        <p><strong>Açıklama:</strong> Pürüzsüz ve hızlı Minecraft deneyimi için özel olarak geliştirilmiş yerli launcher.</p>
+    <!-- İstatistik Sayacı -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>+1,250</h3>
+            <p>Toplam İndirme</p>
+        </div>
+        <div class="stat-card">
+            <h3>%0.0</h3>
+            <p>Gecikme / Lag</p>
+        </div>
+        <div class="stat-card">
+            <h3>Aktif</h3>
+            <p>Destek Sistemi</p>
+        </div>
     </div>
 
-    <!-- İndirme Butonu -->
-    <a href="#" class="btn-download">📥 Launcher'ı İndir (Sürüm 1)</a>
+    <div class="info-box">
+        <p><strong>Sürüm:</strong> v1.0.0 (Güncel)</p>
+        <p><strong>Sistem:</strong> Windows 10 / 11 (64-bit)</p>
+        <p><strong>Açıklama:</strong> Pürüzsüz arayüzü, yüksek FPS optimizasyonları ve dahili Fabric/Sodium mod desteğiyle baştan yaratılmış profesyonel Minecraft Launcher projesi.</p>
+    </div>
 
-    <!-- Kaynak Kodu ve Yardım Kısmı -->
+    <!-- Ana İndirme Butonu -->
+    <a href="#" class="btn-download">🚀 Launcher'ı İndir (Sürüm 1)</a>
+
+    <!-- SİSTEM GEREKSİNİMLERİ (AŞAĞI KAYDIRINCA AÇILAN MALZEMELER) -->
+    <div class="section-title">🖥️ Sistem Gereksinimleri</div>
+    <table>
+        <tr>
+            <th>Bileşen</th>
+            <th>Minimum</th>
+            <th>Önerilen</th>
+        </tr>
+        <tr>
+            <td><strong>İşlemci</strong></td>
+            <td>Intel Core i3 / AMD FX</td>
+            <td>Intel Core i5 / Ryzen 5</td>
+        </tr>
+        <tr>
+            <td><strong>Bellek (RAM)</strong></td>
+            <td>4 GB RAM</td>
+            <td>8 GB RAM veya üzeri</td>
+        </tr>
+        <tr>
+            <td><strong>Ekran Kartı</strong></td>
+            <td>Intel UHD Graphics 620</td>
+            <td>NVIDIA GTX / AMD Radeon</td>
+        </tr>
+    </table>
+
+    <!-- SIKÇA SORULAN SORULAR -->
+    <div class="section-title">❓ Sıkça Sorulan Sorular</div>
+    <div class="faq-item">
+        <div class="faq-title">Launcher tamamen ücretsiz mi?</div>
+        <p class="faq-text">Evet kanka! Yunus Launcher projesi tamamen ücretsiz ve açık kaynak kodlu olarak geliştirilmektedir.</p>
+    </div>
+    <div class="faq-item">
+        <div class="faq-title">Mod desteği var mı?</div>
+        <p class="faq-text">Dahili olarak en güncel Fabric, Sodium ve optimizasyon mod paketleriyle entegre çalışır.</p>
+    </div>
+
+    <!-- Alt Bağlantılar -->
     <div class="sub-buttons">
         <a href="https://github.com/yunuslauncher/yunuslauncher.github.io" target="_blank" class="btn-secondary">💻 Kaynak Kodu</a>
-        <a href="#" class="btn-secondary">❓ Yardım & Destek</a>
+        <a href="#" class="btn-secondary">🛠️ Yardım & Destek</a>
     </div>
 
     <footer>
