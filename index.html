@@ -11,6 +11,7 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Resmin arka planda görünmesi için GitHub'a arkaplan.png adıyla yüklemeyi unutma kanka */
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
                         url('arkaplan.png') no-repeat center center fixed;
             background-size: cover;
@@ -59,7 +60,7 @@
             font-weight: 400;
         }
 
-        /* Büyük İndirme Butonları Grubu */
+        /* Büyük İndirme Butonu Grubu */
         .download-group {
             display: flex;
             align-items: center;
@@ -70,13 +71,14 @@
         .btn-main-download {
             background-color: #38bdf8;
             color: #0f172a;
-            padding: 16px 35px;
+            padding: 16px 45px;
             font-size: 18px;
             font-weight: 700;
             border-radius: 30px;
             text-decoration: none;
             transition: all 0.2s ease;
             box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
+            cursor: pointer;
         }
         .btn-main-download:hover {
             background-color: #ffffff;
@@ -100,7 +102,7 @@
             background-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* İnce Sayaçlar */
+        /* İnce İstatistik Sayaçları */
         .legacy-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -162,7 +164,7 @@
             color: #38bdf8;
         }
 
-        /* SSS Akordeon */
+        /* SSS Akordeon Düzeni */
         .faq-item {
             background: rgba(0, 0, 0, 0.3);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -194,7 +196,7 @@
             text-align: left;
         }
 
-        /* DISCORD DESTEK KUTUSU */
+        /* Destek ve Discord Alanı */
         .support-section {
             background: rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -255,7 +257,7 @@
             color: #38bdf8;
         }
 
-        /* En Alttaki Detaylı Yazılar */
+        /* Alt Bilgi / Footer Text */
         .legacy-footer-text {
             font-size: 12px;
             color: #94a3b8;
@@ -282,24 +284,21 @@
 </head>
 <body>
 
-    <!-- Üst Menü -->
     <div class="navbar">
         <div class="brand">YUNUS LAUNCHER</div>
         <div style="font-size: 14px; color: #cbd5e1;">Advanced Web Connection Hub</div>
     </div>
 
-    <!-- Ana Karşılama Ekranı (Hero) -->
     <div class="hero">
         <h1>Minecraft başlatıcı</h1>
         <p>Kararlı, hızlı ve kolay</p>
         
         <div class="download-group">
-            <a href="#" class="btn-main-download">Windows için indir</a>
+            <a href="BURAYA_LAUNCHAR_DOSYASININ_LİNKİNİ_YAPIŞTIR" class="btn-main-download">🚀 Launcher'ı İndir (Sürüm 1)</a>
             <a href="#yardim-ve-sss" class="btn-more">⋮</a>
         </div>
     </div>
 
-    <!-- İnce İstatistik Sayaçları -->
     <div class="legacy-stats">
         <div class="stat-item">
             <h2>+1,250</h2>
@@ -315,17 +314,14 @@
         </div>
     </div>
 
-    <!-- İÇERİK BÖLÜMÜ -->
     <div class="content-container" id="yardim-ve-sss">
         
-        <!-- Sürüm ve Detay Bilgisi -->
         <div class="legacy-info-row">
             <p><strong>Sürüm:</strong> v1.0.0 (Güncel)</p>
             <p><strong>Sistem:</strong> Windows 10 / 11 (64-bit)</p>
-            <p><strong>Açıklama:</strong> Pürüzsüz arayüzü, yüksek FPS optimizasyonları ve dahili Fabric/Sodium mod desteğiyle baştan yaratılmış profesyonel Minecraft Başlatıcı projesi.</p>
+            <p><strong>Açıklama:</strong> Pürüzsüz arayüzü, yüksek FPS optimizasyonları ve dahili Fabric/Sodium mod desteğiyle baştan yaratılmış profesyonel Minecraft Launcher projesi.</p>
         </div>
 
-        <!-- SSS ALANI -->
         <div class="section-title">SSS</div>
         
         <div class="faq-item">
@@ -343,8 +339,6 @@
             <div class="faq-answer">Evet! Dahili olarak gelen Fabric ve Sodium optimizasyon modlarının yanı sıra, kendi istediğiniz modları da sorunsuz bir şekilde entegre edip yüksek FPS ile oynayabilirsiniz.</div>
         </div>
 
-
-        <!-- SİSTEM GEREKSİNİMLERİ -->
         <div class="section-title">Sistem Gereksinimleri</div>
         <table>
             <tr>
@@ -369,21 +363,16 @@
             </tr>
         </table>
 
-
-        <!-- DESTEK ALANI VE DISCORD KUTUSU -->
         <div class="section-title">Destek</div>
         <div class="support-section">
             <p>Eğer bir hata yaşıyorsanız veya bir şey çalışmıyorsa Discord üzerinden doğrudan arkadaş ekleyerek bana ulaşabilirsiniz:</p>
             
             <div class="discord-box">
                 <div class="discord-title">Discord Arkadaş Ekle</div>
-                <!-- BURADAKİ YAZIYI KENDİ YENİ KULLANICI ADINLA DEĞİŞTİR KANKA -->
                 <div class="discord-username">KullanıcıAdın</div>
             </div>
         </div>
 
-
-        <!-- EN ALT DETAYLI YAZILAR -->
         <div class="legacy-footer-text">
             <div class="footer-links">
                 <a href="https://github.com/yunuslauncher/yunuslauncher.github.io" target="_blank">💻 Proje Kaynak Kodları (GitHub)</a>
@@ -395,7 +384,6 @@
 
     </div>
 
-    <!-- SSS Script -->
     <script>
         function toggleFaq(element) {
             const answer = element.nextElementSibling;
