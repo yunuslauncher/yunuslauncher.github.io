@@ -11,11 +11,7 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Resmin arka planda görünmesi için GitHub'a arkaplan.png adıyla yüklemeyi unutma kanka */
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                        url('arkaplan.png') no-repeat center center fixed;
-            background-size: cover;
-            background-color: #1e293b;
+            background-color: #111827; /* Discord tarzı koyu ve asil arka plan */
             color: #ffffff;
             margin: 0;
             padding: 0;
@@ -34,11 +30,35 @@
             align-items: center;
             padding: 20px;
         }
-        .brand {
-            font-size: 22px;
+        
+        /* Logo ve Yazının Yan Yana Durduğu Kutu */
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px; /* Logo ile yazı arasındaki boşluk */
+        }
+        .brand-logo {
+            width: 45px;  /* Logonun ideal boyutu */
+            height: 45px;
+            object-fit: contain;
+        }
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .brand-title {
+            font-size: 20px;
             font-weight: 800;
             color: #38bdf8;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+        .brand-subtitle {
+            font-size: 11px;
+            color: #94a3b8;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         /* Ana Hero Alanı */
@@ -196,7 +216,7 @@
             text-align: left;
         }
 
-        /* Destek ve Discord Alanı */
+        /* Destek ve İletişim Alanı */
         .support-section {
             background: rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -212,24 +232,7 @@
             font-size: 15px;
             line-height: 1.6;
         }
-        .discord-box {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            background: rgba(88, 101, 242, 0.1);
-            border: 1px solid rgba(88, 101, 242, 0.4);
-            padding: 15px 25px;
-            border-radius: 10px;
-        }
-        .discord-title {
-            color: #5865F2;
-            font-weight: bold;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-        .discord-username {
+        .instagram-username {
             font-size: 18px;
             font-weight: 700;
             color: #ffffff;
@@ -285,8 +288,14 @@
 <body>
 
     <div class="navbar">
-        <div class="brand">YUNUS LAUNCHER</div>
-        <div style="font-size: 14px; color: #cbd5e1;">Advanced Web Connection Hub</div>
+        <div class="brand-container">
+            <img src="logo.png" alt="Yunus Launcher Logo" class="brand-logo">
+            <div class="brand-text">
+                <span class="brand-title">YUNUS LAUNCHER</span>
+                <span class="brand-subtitle">ADVANCED MINECRAFT HUB</span>
+            </div>
+        </div>
+        <div style="font-size: 14px; color: #cbd5e1;">v1.0.0 Stable</div>
     </div>
 
     <div class="hero">
@@ -363,14 +372,14 @@
             </tr>
         </table>
 
-        <div class="section-title">Destek</div>
+        <div class="section-title">Destek ve İletişim</div>
         <div class="support-section">
-            <p>Eğer bir hata yaşıyorsanız veya bir şey çalışmıyorsa Discord üzerinden doğrudan arkadaş ekleyerek bana ulaşabilirsiniz:</p>
+            <p>Eğer bir hata yaşıyorsanız, öneriniz varsa veya bir şey çalışmıyorsa Türkiye'de açık olan resmi Instagram hesabımız üzerinden DM göndererek bana her zaman ulaşabilirsiniz:</p>
             
-            <div class="discord-box">
-                <div class="discord-title">Discord Arkadaş Ekle</div>
-                <div class="discord-username">KullanıcıAdın</div>
-            </div>
+            <a href="https://instagram.com/YunusLauncher" target="_blank" style="display: inline-flex; flex-direction: column; align-items: center; background: rgba(225, 48, 108, 0.1); border: 1px solid rgba(225, 48, 108, 0.4); padding: 15px 45px; border-radius: 10px; text-decoration: none; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="color: #e1306c; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Instagram DM Gönder</div>
+                <div class="instagram-username" style="font-size: 16px;">@YunusLauncher</div>
+            </a>
         </div>
 
         <div class="legacy-footer-text">
