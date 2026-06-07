@@ -11,10 +11,10 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* SENİN BİLGİSAYARINDAKİ VE GITHUB'DAKİ ARKA PLAN RESMİ */
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
                         url('arkaplan.png') no-repeat center center fixed;
             background-size: cover;
+            background-color: #1e293b;
             color: #ffffff;
             margin: 0;
             padding: 0;
@@ -36,7 +36,7 @@
         .brand {
             font-size: 22px;
             font-weight: 800;
-            color: #38bdf8; /* Baby Blue */
+            color: #38bdf8;
             letter-spacing: 1px;
         }
 
@@ -100,7 +100,7 @@
             background-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* LEGACY TARZI İNCE VE ŞEFFAF SAYAÇLAR */
+        /* İnce Sayaçlar */
         .legacy-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -110,8 +110,8 @@
             margin-bottom: 60px;
         }
         .stat-item {
-            background: rgba(0, 0, 0, 0.35); /* Çok hafif şeffaf gölge */
-            border-top: 3px solid #38bdf8; /* Üstte ince baby blue çizgi */
+            background: rgba(0, 0, 0, 0.35);
+            border-top: 3px solid #38bdf8;
             border-radius: 8px;
             padding: 20px;
             text-align: left;
@@ -121,7 +121,7 @@
             margin: 0;
             font-size: 32px;
             font-weight: 700;
-            color: #fff;
+            color: #38bdf8;
         }
         .stat-item p {
             margin: 5px 0 0 0;
@@ -144,7 +144,7 @@
             width: 100%;
         }
 
-        /* Sürüm Bilgileri / Açıklama Alanı (Şeffaf Geçişli) */
+        /* Sürüm Bilgileri / Açıklama Alanı */
         .legacy-info-row {
             background: rgba(0, 0, 0, 0.25);
             border-left: 4px solid #38bdf8;
@@ -162,7 +162,7 @@
             color: #38bdf8;
         }
 
-        /* SSS (Sıkça Sorulan Sorular) - Akordeon Düzeni */
+        /* SSS Akordeon */
         .faq-item {
             background: rgba(0, 0, 0, 0.3);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -194,7 +194,7 @@
             text-align: left;
         }
 
-        /* DESTEK VE DISCORD ALANI */
+        /* DISCORD DESTEK KUTUSU */
         .support-section {
             background: rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -208,23 +208,37 @@
             margin: 0 0 20px 0;
             color: #cbd5e1;
             font-size: 15px;
+            line-height: 1.6;
         }
-        .btn-discord {
+        .discord-box {
             display: inline-flex;
+            flex-direction: column;
             align-items: center;
-            background-color: #5865F2; /* Orijinal Discord Rengi */
-            color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.2s;
+            background: rgba(88, 101, 242, 0.1);
+            border: 1px solid rgba(88, 101, 242, 0.4);
+            padding: 15px 25px;
+            border-radius: 10px;
         }
-        .btn-discord:hover {
-            background-color: #4752c4;
+        .discord-title {
+            color: #5865F2;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .discord-username {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-family: monospace;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
         }
 
-        /* Sistem Gereksinimleri Tablosu (Şeffaf) */
+        /* Sistem Gereksinimleri Tablosu */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -241,7 +255,7 @@
             color: #38bdf8;
         }
 
-        /* En Alttaki Legacy Tarzı Detaylı Yazılar */
+        /* En Alttaki Detaylı Yazılar */
         .legacy-footer-text {
             font-size: 12px;
             color: #94a3b8;
@@ -285,19 +299,19 @@
         </div>
     </div>
 
-    <!-- LEGACY TARZI İNCE SAYAÇLAR -->
+    <!-- İnce İstatistik Sayaçları -->
     <div class="legacy-stats">
         <div class="stat-item">
-            <h2>287 B</h2>
-            <p>Bugün ziyaret etti</p>
+            <h2>+1,250</h2>
+            <p>Toplam İndirme</p>
         </div>
         <div class="stat-item">
-            <h2>40 B</h2>
-            <p>Şu anda çevrimiçi</p>
+            <h2>%0.0</h2>
+            <p>Gecikme / Lag</p>
         </div>
         <div class="stat-item">
-            <h2>1 Mn</h2>
-            <p>Ay içinde ziyaret etti</p>
+            <h2>Aktif</h2>
+            <p>Destek Sistemi</p>
         </div>
     </div>
 
@@ -356,19 +370,22 @@
         </table>
 
 
-        <!-- DESTEK ALANI -->
+        <!-- DESTEK ALANI VE DISCORD KUTUSU -->
         <div class="section-title">Destek</div>
         <div class="support-section">
-            <p>Eğer bir şey çalışmıyorsa veya beklenen gibi değilse bize her zaman ulaşabilirsiniz. Deneyimli geliştiricilerimiz ve gönüllüler size yardımcı etmeye çalışacaklardır.</p>
-            <!-- Buradaki diyez (#) işaretini silip kendi discord davet linkini yapıştırabilirsin kanka -->
-            <a href="#" target="_blank" class="btn-discord">Discord</a>
+            <p>Eğer bir hata yaşıyorsanız veya bir şey çalışmıyorsa Discord üzerinden doğrudan arkadaş ekleyerek bana ulaşabilirsiniz:</p>
+            
+            <div class="discord-box">
+                <div class="discord-title">Discord Arkadaş Ekle</div>
+                <!-- BURADAKİ YAZIYI KENDİ YENİ KULLANICI ADINLA DEĞİŞTİR KANKA -->
+                <div class="discord-username">KullanıcıAdın</div>
+            </div>
         </div>
 
 
         <!-- EN ALT DETAYLI YAZILAR -->
         <div class="legacy-footer-text">
             <div class="footer-links">
-                <!-- Bizim eklediğimiz kaynak kod linki -->
                 <a href="https://github.com/yunuslauncher/yunuslauncher.github.io" target="_blank">💻 Proje Kaynak Kodları (GitHub)</a>
             </div>
             <p>Bu oyunu oynayanların PEGI tarafından 7 yaş ve üzeri, ESRB tarafından 10 yaş ve üzeri elverişli olması tavsiye edilir. Daha fazla bilgi için Minecraft resmi ebeveyn kılavuzuna bakın.</p>
@@ -378,7 +395,7 @@
 
     </div>
 
-    <!-- SSS Açma Kapatma Fonksiyonu İçin Küçük JavaScript -->
+    <!-- SSS Script -->
     <script>
         function toggleFaq(element) {
             const answer = element.nextElementSibling;
